@@ -750,8 +750,8 @@ MICROSITE_ROOT_DIR = path(ENV_TOKENS.get('MICROSITE_ROOT_DIR', ''))
 if ENV_TOKENS.get('AUDIT_CERT_CUTOFF_DATE', None):
     AUDIT_CERT_CUTOFF_DATE = dateutil.parser.parse(ENV_TOKENS.get('AUDIT_CERT_CUTOFF_DATE'))
 
-#To modify the country or region list use the override list in server-vars.yml
-_COUNTRIES_OVERRIDE = ENV_TOKENS.get('COUNTRIES_OVERRIDE')
+# django-countries overrides
+_COUNTRIES_OVERRIDE = ENV_TOKENS.get('COUNTRIES_OVERRIDE', None)
 if _COUNTRIES_OVERRIDE:
     COUNTRIES_OVERRIDE = _COUNTRIES_OVERRIDE
 
